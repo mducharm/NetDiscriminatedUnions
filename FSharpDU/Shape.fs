@@ -3,14 +3,14 @@ module Shape
 open System
 
 type Shape =
-    | Circle of float
-    | Rectangle of float * float
-    | Square of float
-    | Triangle of float * float
+    | Circle of radius: float
+    | Rectangle of length: float * height: float
+    | Square of side: float
+    | Triangle of length: float * height: float
 
 let calculateArea =
     function
-    | Circle c -> c * Math.PI
-    | Rectangle (b, h) -> b * h
-    | Square (s) -> s * s
-    | Triangle (b, h) -> b * h * 0.5
+    | Circle radius -> radius * Math.PI
+    | Rectangle (length, height) -> length * height
+    | Square side -> side * side
+    | Triangle (length, height) -> length * height * 0.5
